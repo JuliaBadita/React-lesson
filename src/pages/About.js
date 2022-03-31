@@ -17,6 +17,15 @@ const About = () => {
         ab, quaerat eveniet rem sunt amet soluta asperiores eum at obcaecati,
         consequuntur atque dignissimos ea? Quaerat.
       </p>
+      <br />
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores
+        sequi cumque ullam ea, natus ducimus possimus ratione nemo rerum
+        reiciendis soluta quam aliquid doloremque, nam voluptatibus aspernatur
+        corporis omnis quis, similique molestias minus quasi nihil quod? Illo
+        voluptatum ducimus labore nulla totam, eius delectus voluptas porro odio
+        eaque dignissimos hic.
+      </p>
     </div>
   )
 }
