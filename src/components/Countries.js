@@ -51,6 +51,9 @@ const Countries = () => {
               type="radio"
               id={continent}
               name="continentRadio"
+              //   on crée une condition pour décocher l'input une fois qu'on a cliqué sur annuler la recherche donc
+              // est ce que continent = selectedRadio, si oui = true; si non = false et maintenant la séléction est décochée
+              checked={continent === selectedRadio}
               onChange={(e) => setSelectedRadio(e.target.id)}
             />
             {/* en JSX : htmlFor = la même chose que le for en HTML */}
@@ -58,6 +61,13 @@ const Countries = () => {
           </li>
         ))}
       </ul>
+      {/* pour pouvoir retourner à la liste complète des 250 pays : on regarde si selectedRadio = true càd si on a cliqué dessus alors === créer bouton annuler la recherche
+      Avec le onClick = fonction fléchée vu que ('')*/}
+      {selectedRadio && (
+        <button onClick={() => setSelectedRadio('')}>
+          Annuler la recherche
+        </button>
+      )}
       <ul>
         {/*  on lui dit comment appeler chaque élément individuellement :
            appelle un country, => ce qu'il va faire de chacun de ces élements/country  
