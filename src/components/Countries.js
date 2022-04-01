@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import Card from './Card'
 
 // useEffect et useState = des hooks en React
 const Countries = () => {
@@ -26,11 +27,16 @@ const Countries = () => {
         {
           //   on lui dit comment appeler chaque élément individuellement :
           //  appelle un country, => ce qu'il va faire de chacun de ces élements/country = créer un li
+
           data.map((country, index) => (
-            //  On doit leur créer une clé unique à chacun donc avec index cela va compter 0, 1, 2 jusqu'à 250 donc chaque pays aura une clé unique qui sera son numéro
-            // et dans le li : on regarde la console dans components pour voir comment les lister : {countries.translations.fra.common} pour les appeler :
+            // (((((dans le li : on regarde la console dans components pour voir comment les lister : {countries.translations.fra.common} pour les appeler :
             // dans components on va dans countries ensuite dans la cat translations pour la langue, ensuite la cat fra = on la choisit pour les pays en fr et la cat common = là où sont écrit le nom de pays
-            <li key={index}>{country.translations.fra.common}</li>
+            // <li key={index}>{country.translations.fra.common}</li>))))))
+
+            //  On doit leur créer une clé unique à chacun donc avec index cela va compter 0, 1, 2 jusqu'à 250 donc chaque pays aura une clé unique qui sera son numéro
+            // maintenant avec la clé index cela apparait quand on va dans components > countries
+            // + on lui dit de recupérer country
+            <Card key={index} country={country} />
           ))
         }
       </ul>
