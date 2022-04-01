@@ -1,2 +1,2 @@
 # React-lesson
-Following a Youtube tutorial on React to understand better how it works and the good semantic etc 
+Following a Youtube tutorial on React, creating a basic website showing dynamically countries with their attributes (name, capital, population, ...)
