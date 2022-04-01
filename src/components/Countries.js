@@ -42,7 +42,7 @@ const Countries = () => {
           onChange={(e) => setRangeValue(e.target.value)}
         />
 
-        {/* on va mapper les radios  */}
+        {/* on va mapper les radios (pour afficher)  */}
         {radios.map((continent) => (
           <li>
             {/* grâce au name="continentRadio" vu qu'ils ont tous le même nom, on ne peut désormais plus qu'en cocher un à la fois
@@ -63,10 +63,13 @@ const Countries = () => {
            appelle un country, => ce qu'il va faire de chacun de ces élements/country  
            le .slice(0,rangeValue) = valeur dynamique du nombre de pays qu'on veut afficher
            et le .filter à filtrer les pays > on lui demande est ce que country.continents inclut ce que l'utilisateur veut voir 
-           (c'est à dire selectedRadio) cela va filter tous les pays qui correspondent à ca donc, par exemple tous ceux qui correspondent à l'id Africa etc*/}
+           (c'est à dire selectedRadio) cela va filter tous les pays qui correspondent à ca donc, par exemple tous ceux qui correspondent à l'id Africa etc
+           le .sort = trier les pays par ordre de décroissance de population (on le met après le filter comme ça - de pays à trier */}
 
         {data
           .filter((country) => country.continents[0].includes(selectedRadio))
+          //  .sort = 2 paramètres : a et b, en mettant le b d'abord - a on trie par ordre décroissant vu que ce sont des objets il faut préciser => b.population
+          .sort((a, b) => b.population - a.population)
           .slice(0, rangeValue)
           .map((country, index) => (
             // (((((dans le li : on regarde la console dans components pour voir comment les lister : {countries.translations.fra.common} pour les appeler :
